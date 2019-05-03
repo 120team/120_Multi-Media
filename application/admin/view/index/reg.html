@@ -20,8 +20,19 @@
       $axure.utils.getOtherPath = function() { return '__PUBLIC__/static/registry/resources/Other.html'; };
       $axure.utils.getReloadPath = function() { return '__PUBLIC__/static/registry/resources/reload.html'; };
     </script>
+      <style>
+          dl{
+              text-align:center;
+              border:2px solid #008800;
+              margin-top:10px;
+              margin-bottom:10px;
+              margin-right:70px;
+              margin-left:70px;
+          }
+      </style>
   </head>
   <body>
+  <form action="{:url('Admin/index/reg')}" method="post" name="reg" id="reg">
     <div id="base" class="">
 
       <!-- Unnamed (组 合) -->
@@ -57,7 +68,12 @@
               <div id="u7" class="ax_default shape">
                 <div id="u7_div" class=""></div>
                 <div id="u7_text" class="text ">
-                  <p><span>确认密码</span></p>
+                  <!--<p><span>确认密码</span></p>-->
+                  <label>确认密码：</label>
+                  <input type="password" class="inputBg" name="repwd" style="width: 280px;
+        height: 30px;
+        font-size: 17px;
+        border: none;">
                 </div>
               </div>
 
@@ -77,7 +93,12 @@
               <div id="u10" class="ax_default shape">
                 <div id="u10_div" class=""></div>
                 <div id="u10_text" class="text ">
-                  <p><span>注 册</span></p>
+                  <!--<p><span>注 册</span></p>-->
+                  <input type="submit" class="btn_submit" name="registry" value="注 册" style="width: 100px;
+        height: 40px;
+        font-size: 17px;
+        background-color: #1890FF;
+        border: none;">
                 </div>
               </div>
 
@@ -85,7 +106,13 @@
               <div id="u11" class="ax_default label">
                 <div id="u11_div" class=""></div>
                 <div id="u11_text" class="text ">
-                  <p><span>使用已有帐户登录</span></p>
+                  <!--<p><span>使用已有帐户登录</span></p>-->
+                    <input type="" class="btn_submit" name="registry" value="使用已有账户登录" style="width: 100px;
+        height: 40px;
+        font-size: 12px;
+        color: #009dda;
+        background-color: transparent;
+        border: none;">
                 </div>
               </div>
             </div>
@@ -97,7 +124,12 @@
               <div id="u13" class="ax_default shape">
                 <div id="u13_div" class=""></div>
                 <div id="u13_text" class="text ">
-                  <p><span>6 - 16位密码，区分大小写</span></p>
+                  <!--<p><span>6 - 16位密码，区分大小写</span></p>-->
+                  <label>密码：</label>
+                  <input type="password" class="inputBg" name="password" style="width: 280px;
+        height: 30px;
+        font-size: 17px;
+        border: none;">
                 </div>
               </div>
 
@@ -120,7 +152,12 @@
                 <div id="u17" class="ax_default shape">
                   <div id="u17_div" class=""></div>
                   <div id="u17_text" class="text ">
-                    <p><span>输入验证码</span></p>
+                    <!--<p><span>输入验证码</span></p>-->
+                    <label>输入验证码：</label>
+                    <input type="text" class="inputBg" name="identifying code" style="width: 80px;
+        height: 30px;
+        font-size: 17px;
+        border: none;">
                   </div>
                 </div>
 
@@ -149,7 +186,12 @@
               <div id="u21" class="ax_default shape">
                 <div id="u21_div" class=""></div>
                 <div id="u21_text" class="text ">
-                  <p><span>邮箱</span></p>
+                  <!--<p><span>邮箱</span></p>-->
+                  <label>用户名：</label>
+                  <input type="text" class="inputBg" name="username" style="width: 280px;
+        height: 30px;
+        font-size: 17px;
+        border: none;">
                 </div>
               </div>
 
@@ -246,5 +288,6 @@
         </div>
       </div>
     </div>
+  </form>
   </body>
 </html>

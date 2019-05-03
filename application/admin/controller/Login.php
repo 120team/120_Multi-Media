@@ -4,7 +4,7 @@ use app\admin\model\User;
 use think\Controller;
 use think\Db;
 
-class Index extends Controller
+class Login extends Controller
 {
     //用户注册/添加管理员
 //    public function reg(){
@@ -52,19 +52,7 @@ class Index extends Controller
 //        return $salt;
 //    }
 
-    public function index(){
-        return $this->fetch();
-    }
-
-    //退出登录
-    public function logout(){
-        cookie('userid',null);
-        cookie('username',null);
-        cookie('key',null);
-        return $this->fetch('login');
-    }
-
-    //用户登录
+//用户登录
     public function login()
     {
 //        echo chk();exit();
@@ -83,9 +71,10 @@ class Index extends Controller
                 cookie('username',$userinfo['username']);
                 $_cookie = encryption($userinfo['username'].$userinfo['password'].config('_cookie'));
                 cookie('key',$_cookie);
-                $this->redirect('admin\index\index',302);
+                $this->redirect('admin\Index\index',302);
             }
         }
+
         return $this->fetch();
     }
 }

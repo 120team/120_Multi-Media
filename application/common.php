@@ -10,3 +10,10 @@
 // +----------------------------------------------------------------------
 
 // 应用公共文件
+function encryption($a){
+    return md5($a);
+}
+
+function chk(){
+    return encryption(cookie('username').cookie('userid').config('_cookie')) === cookie('key');
+}
