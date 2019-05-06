@@ -88,4 +88,15 @@ class Index extends Controller
         }
         return $this->fetch();
     }
+
+    //清除缓存
+//    public function Clear_Cachep(){
+//        cache('produce',null);
+//        $this->redirect('admin\custom\produce',302);
+//    }
+//
+//    public function Clear_Caches(){
+//        cache('scenery',null);
+//        $this->redirect('admin\main\scenery',302);
+//    }
 }

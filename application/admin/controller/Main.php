@@ -14,12 +14,16 @@ class Main extends Controller{
 
     public function scenery(){
 //        var_dump($articleModel->select());
-        $list = $this->sceneryModel->paginate(2);
-        // 把分页数据赋值给模板变量list
-        $page = $list->render();
+        $list = cache('scenery');
+//        if (!$list){
+//            exit();
+            $list = $this->sceneryModel->paginate(2);
+//            cache('scenery',$list,10);
+//        }
+
         //分页显示输出
         $this->assign('list',$list);
-        $this->assign('page',$page);
+        $this->assign('page',$list->render());// 把分页数据赋值给模板变量list
 
         $this->assign('scenery',$this->sceneryModel->select());
         return $this->fetch();

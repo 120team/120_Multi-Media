@@ -7,16 +7,29 @@ use think\Db;
 
 
 class Custom extends Controller {
-
+    /**
+     * @return mixed
+     * @throws \think\Exception
+     * @throws \think\db\exception\DataNotFoundException
+     * @throws \think\db\exception\ModelNotFoundException
+     * @throws \think\exception\DbException
+     */
     public function produce(){
+
         $articleModel = db('Article');
 //        var_dump($articleModel->select());
-        $list = $articleModel->paginate(2);
-        // 把分页数据赋值给模板变量list
-        $page = $list->render();
+//        $list = cache('produce');
+//        $page = cache('page');
+//        if (!$list){
+//            exit();
+            $list= $articleModel->paginate(2);
+            $page = $list->render();
+//            cache('produce',$list,10);
+//            cache('page',$page,10);
+//        }
         //分页显示输出
         $this->assign('list',$list);
-        $this->assign('page',$page);
+        $this->assign('page',$page);// 把分页数据赋值给模板变量list
 //        var_dump($list);exit();
         $this->assign('produce',$articleModel->select());
         $this->assign('count',$articleModel->count());

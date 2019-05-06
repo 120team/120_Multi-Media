@@ -13,7 +13,7 @@
 function encryption($a){
     return md5($a);
 }
-
+//cookie检查
 function chk(){
     return encryption(cookie('username').cookie('userid').config('_cookie')) === cookie('key');
 }
