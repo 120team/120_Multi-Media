@@ -1,8 +1,8 @@
 <?php
 namespace app\admin\controller;
-use app\admin\model\User;
+
 use think\Controller;
-use think\Db;
+
 
 class Index extends Controller
 {
