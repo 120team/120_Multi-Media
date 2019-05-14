@@ -130,6 +130,22 @@ class Main extends Controller{
                     // 上传失败获取错误信息
                     echo $file->getError();
                 }
+            }else{
+                //编辑时，使用之前默认图片
+                    $_file = $this->sceneryModel->where('id',$id)->field('file')->find();
+                    $_thumb = $this->sceneryModel->where('id',$id)->field('thumb')->find();
+                    if (!(is_null($_file) && is_null($_thumb))){
+                        $data = [
+                            'title' => $this->sceneryModel->title,
+                            'file' => $_file['file'],
+                            'thumb' => $_thumb['thumb'],
+                        ];
+                        $this->sceneryModel->where('id',$id)->update($data);
+                        $this->success('提交成功','admin/main/scenery','','2');
+                    }else{
+//                        var_dump($this->sceneryModel->where('id',$id)->update($data));exit();
+                        $this->error('提交失败','','','2');
+                    }
             }
         }
         $this->assign('sce',$this->sceneryModel->find(input('id')));
