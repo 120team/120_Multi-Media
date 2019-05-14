@@ -136,4 +136,3 @@ class Main extends Controller{
         return $this->fetch();
     }
 }
-?>

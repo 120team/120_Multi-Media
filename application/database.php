@@ -17,9 +17,9 @@ return [
     // 数据库名
     'database'        => 'multimedia',
     // 用户名
-    'username'        => 'root',
+    'username'        => 'multimedia',
     // 密码
-    'password'        => '',
+    'password'        => '120120120',
     // 端口
     'hostport'        => '',
     // 连接dsn

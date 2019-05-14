@@ -1,9 +1,6 @@
 <?php
 namespace app\admin\controller;
-use app\admin\model\Article;
-use app\admin\model\User;
 use think\Controller;
-use think\Db;
 
 
 class Custom extends Controller {
@@ -36,6 +33,9 @@ class Custom extends Controller {
         return $this->fetch();
     }
 
+    /**
+     * @return mixed
+     */
     public function produceadd(){
         if (request()->isPost()) {
             $articleModel = db('Article');
@@ -62,6 +62,14 @@ class Custom extends Controller {
         return $this->fetch();
     }
 
+    /**
+     * @return mixed
+     * @throws \think\Exception
+     * @throws \think\db\exception\DataNotFoundException
+     * @throws \think\db\exception\ModelNotFoundException
+     * @throws \think\exception\DbException
+     * @throws \think\exception\PDOException
+     */
     public function produceedit(){
         $articleModel = db('Article');
         if (request()->isPost()) {
@@ -77,6 +85,10 @@ class Custom extends Controller {
         return $this->fetch();
     }
 
+    /**
+     * @throws \think\Exception
+     * @throws \think\exception\PDOException
+     */
     public function producedel(){
         $articleModel = db('Article');
         if ($articleModel->delete(input('id'))){
@@ -86,4 +98,3 @@ class Custom extends Controller {
         }
     }
 }
-?>
