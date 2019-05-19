@@ -41,7 +41,7 @@ class Custom extends Controller {
     /**
      * @return mixed
      */
-    public function produceadd(){
+    public function produce_add(){
         if (request()->isPost()) {
             $articleModel = db('Article');
             $articleModel->title = input('post.title');
@@ -75,7 +75,7 @@ class Custom extends Controller {
      * @throws DbException
      * @throws PDOException
      */
-    public function produceedit(){
+    public function produce_edit(){
         $articleModel = db('Article');
         if (request()->isPost()) {
             $articleModel = db('Article');
@@ -94,7 +94,7 @@ class Custom extends Controller {
      * @throws Exception
      * @throws PDOException
      */
-    public function producedel(){
+    public function produce_del(){
         $articleModel = db('Article');
         if ($articleModel->delete(input('id'))){
             $this->success("删除成功",'admin/custom/produce','',2);

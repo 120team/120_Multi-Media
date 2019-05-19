@@ -48,7 +48,7 @@ class Main extends Controller{
     /**
      * @return mixed
      */
-    public function sceneryadd(){
+    public function scenery_add(){
         if (request()->isPost()){
             $this->sceneryModel->title = input('post.title');
             $result = $this->validate(
@@ -105,7 +105,7 @@ class Main extends Controller{
      * @throws Exception
      * @throws PDOException
      */
-    public function scenerydel(){
+    public function scenery_del(){
         if ($this->sceneryModel->delete(input('id'))){
             $this->success("删除成功",'admin/main/scenery','',2);
         }else{
@@ -121,7 +121,7 @@ class Main extends Controller{
      * @throws Exception
      * @throws PDOException
      */
-    public function sceneryedit(){
+    public function scenery_edit(){
         if (request()->isPost()) {
             $id = input('id');
             $this->sceneryModel->title = input('post.title');

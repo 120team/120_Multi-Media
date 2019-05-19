@@ -5,6 +5,6 @@ class Index extends Controller
 {
     public function index()
     {
-        return '我是主页';
+        return $this->fetch();
     }
 }
