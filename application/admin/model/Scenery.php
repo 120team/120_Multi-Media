@@ -4,4 +4,3 @@ use think\Model;
 class Scenery extends Model{
 
 }
-?>
