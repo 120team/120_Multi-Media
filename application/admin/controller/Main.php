@@ -2,16 +2,32 @@
 namespace app\admin\controller;
 use app\admin\model\Scenery;
 use think\Controller;
+use think\db\exception\DataNotFoundException;
+use think\db\exception\ModelNotFoundException;
+use think\Exception;
+use think\exception\DbException;
+use think\exception\PDOException;
 use think\Request;
 
 class Main extends Controller{
     public $sceneryModel;
+
+    /**
+     * Main constructor.
+     * @param Request|null $request
+     */
     public function __construct(Request $request = null)
     {
         parent::__construct($request);
         $this->sceneryModel = db('Scenery');
     }
 
+    /**
+     * @return mixed
+     * @throws DataNotFoundException
+     * @throws ModelNotFoundException
+     * @throws DbException
+     */
     public function scenery(){
 //        var_dump($articleModel->select());
         $list = cache('scenery');
@@ -29,6 +45,9 @@ class Main extends Controller{
         return $this->fetch();
     }
 
+    /**
+     * @return mixed
+     */
     public function sceneryadd(){
         if (request()->isPost()){
             $this->sceneryModel->title = input('post.title');
@@ -82,6 +101,10 @@ class Main extends Controller{
         return $this->fetch();
     }
 
+    /**
+     * @throws Exception
+     * @throws PDOException
+     */
     public function scenerydel(){
         if ($this->sceneryModel->delete(input('id'))){
             $this->success("删除成功",'admin/main/scenery','',2);
@@ -90,6 +113,14 @@ class Main extends Controller{
         }
     }
 
+    /**
+     * @return mixed
+     * @throws DataNotFoundException
+     * @throws DbException
+     * @throws ModelNotFoundException
+     * @throws Exception
+     * @throws PDOException
+     */
     public function sceneryedit(){
         if (request()->isPost()) {
             $id = input('id');

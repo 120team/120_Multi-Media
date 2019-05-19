@@ -2,11 +2,19 @@
 namespace app\index\controller;
 use app\index\model\User_info;
 use think\Controller;
+use think\db\exception\DataNotFoundException;
+use think\db\exception\ModelNotFoundException;
+use think\exception\DbException;
 use think\Request;
 
 class Forum extends Controller{
 public $userModel;
 public $forumModel;
+
+    /**
+     * Forum constructor.
+     * @param Request|null $request
+     */
     public function __construct(Request $request = null)
     {
         parent::__construct($request);
@@ -14,12 +22,19 @@ public $forumModel;
         $this->forumModel = db('Forum_log');
     }
 
-    //论坛首页
+
+    /**
+     * 论坛首页
+     * @return mixed
+     */
     public function index(){
         return $this->fetch();
     }
 
-    //用户注册
+
+    /**用户注册
+     * @return mixed
+     */
     public function register(){
         //实例化User
         if (Request()->isPost()){
@@ -119,14 +134,25 @@ public $forumModel;
         return $this->fetch();
     }
 
-    //密码加盐
+
+    /**
+     * 密码加盐
+     * @return bool|string
+     */
     public function salt(){
         $str = 'asdjflsl[k23u42]fjsa#$@!kdjfjlk90';
         $salt = substr(str_shuffle($str),0,8);
         return $salt;
     }
 
-    //用户登录
+
+    /**
+     * 用户登录
+     * @return mixed
+     * @throws DataNotFoundException
+     * @throws ModelNotFoundException
+     * @throws DbException
+     */
     public function login(){
         if (request()->isPost()){
             $user_name = input('post.user_name');

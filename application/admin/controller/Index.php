@@ -2,24 +2,29 @@
 namespace app\admin\controller;
 
 use think\Controller;
+use think\db\exception\DataNotFoundException;
+use think\db\exception\ModelNotFoundException;
+use think\exception\DbException;
 
 
 class Index extends Controller
 {
-
+    /**
+     * 首页
+     * @return mixed
+     */
     public function index(){
         return $this->fetch();
     }
 
-    //退出登录
-    public function logout(){
-        cookie('userid',null);
-        cookie('username',null);
-        cookie('key',null);
-        return $this->fetch('login');
-    }
 
-    //用户登录
+    /**
+     * 用户登录
+     * @return mixed
+     * @throws DataNotFoundException
+     * @throws ModelNotFoundException
+     * @throws DbException
+     */
     public function login()
     {
 //        echo chk();exit();
@@ -43,6 +48,19 @@ class Index extends Controller
         }
         return $this->fetch();
     }
+
+
+    /**
+     * 退出登录
+     * @return mixed
+     */
+    public function logout(){
+        cookie('userid',null);
+        cookie('username',null);
+        cookie('key',null);
+        return $this->fetch('login');
+    }
+
 
     //清除缓存
 //    public function Clear_Cachep(){
