@@ -6,6 +6,7 @@ use think\Controller;
 use think\db\exception\DataNotFoundException;
 use think\db\exception\ModelNotFoundException;
 use think\exception\DbException;
+use think\Model;
 
 
 class Index extends Controller
@@ -32,7 +33,8 @@ class Index extends Controller
         if (request()->isPost()){
             $username = input('post.username');
             $pwd = input('post.password');
-            $userinfo = User::where(array('username'=>$username))->find();
+            $usermodel = db('user');
+            $userinfo = $usermodel->where(array('username'=>$username))->find();
             if (!$userinfo){
                 $this->error('用户名错误','','','2');
             }
