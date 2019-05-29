@@ -35,14 +35,8 @@
 				<ul class="cl">
 					<!--<li>超级管理员</li>-->
 					<li class="dropDown dropDown_hover">
-						<!--验证cookie是否正确-->
-						{if condition="chk()"}
-							{$Think.cookie.username}
-						{else /}
-						<script language="javascript" type="text/javascript">
-							window.location.href='{:url('admin/index/login')}';
-						</script>
-						{/if}
+						{$Think.session.username}
+					</li>
 					<li><a href="{:url('admin/index/logout')}">退出</a></li>
 						<!--<ul class="dropDown-menu menu radius box-shadow">-->
 							<!--<li><a href="javascript:;" onClick="myselfinfo()">个人信息</a></li>-->
@@ -74,23 +68,41 @@
 			<dt><i class="Hui-iconfont">&#xe616;</i> 主页面<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
 			<dd>
 				<ul>
-					<li><a href="" title="乡首">乡首</a></li>
-					<li><a href="" title="乡史">乡史</a></li>
-					<li><a href="{:url('admin/main/scenery')}" title="乡景">乡景</a></li>
-		</ul>
-	</dd>
-</dl>
+					<li><a href="" title="首页">首页</a></li>
+					<li><a href="" title="名人传记">名人传记</a></li>
+				</ul>
+			</dd>
+		</dl>
 		<dl id="menu-picture">
-			<dt><i class="Hui-iconfont">&#xe613;</i> 乡俗<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+			<dt><i class="Hui-iconfont">&#xe613;</i>民俗风情<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
 			<dd>
 				<ul>
-					<li><a href="" title="民俗风情">民俗风情</a></li>
-					<li><a href="{:url('admin/custom/produce')}" title="名优特产">名优特产</a></li>
-					<li><a href="" title="当地方言">当地方言</a></li>
-		</ul>
-	</dd>
-</dl>
-</div>
+					<li><a href="{:url('admin/custom/opera')}" title="戏曲">戏曲</a></li>
+				</ul>
+			</dd>
+		</dl>
+		<dl id="menu-product">
+			<dt><i class="Hui-iconfont">&#xe613;</i>古树古建筑<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+			<dd>
+				<ul>
+					<li><a href="{:url('admin/atreea/old_west_l')}" title="老西湖十景">老西湖十景</a></li>
+					<li><a href="{:url('admin/atreea/new_west_lake')}" title="新西湖十景">新西湖十景</a></li>
+					<li><a href="{:url('admin/atreea/former_residence')}" title="故居">故居</a></li>
+					<li><a href="{:url('admin/atreea/oldtrees')}" title="古树">古树</a></li>
+				</ul>
+			</dd>
+		</dl>
+		<dl id="menu-comments">
+			<dt><i class="Hui-iconfont">&#xe613;</i>民间传说故事<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+			<dd>
+				<ul>
+					<li><a href="{:url('admin/folklorestories/user_management')}" title="用户管理">用户管理</a></li>
+					<li><a href="{:url('admin/folklorestories/user_log')}" title="文章管理">文章管理</a></li>
+					<li><a href="{:url('admin/folklorestories/discuss')}" title="评论管理">评论管理</a></li>
+				</ul>
+			</dd>
+		</dl>
+	</div>
 </aside>
 <div class="dislpayArrow hidden-xs"><a class="pngfix" href="javascript:void(0);" onClick="displaynavbar(this)"></a></div>
 

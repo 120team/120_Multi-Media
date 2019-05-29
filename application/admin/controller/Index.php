@@ -41,10 +41,11 @@ class Index extends Controller
             if ($userinfo['password'] !== md5($pwd.$userinfo['salt'])){
                 $this->error('密码错误','','','2');
             }else{
-                cookie('userid',$userinfo['password']);
-                cookie('username',$userinfo['username']);
-                $_cookie = encryption($userinfo['username'].$userinfo['password'].config('_cookie'));
-                cookie('key',$_cookie);
+                session('username',$userinfo['username']);
+//                cookie('userid',$userinfo['password']);
+//                cookie('username',$userinfo['username']);
+//                $_cookie = encryption($userinfo['username'].$userinfo['password'].config('_cookie'));
+//                cookie('key',$_cookie);
                 $this->redirect('admin\index\index',302);
             }
         }
@@ -57,9 +58,7 @@ class Index extends Controller
      * @return mixed
      */
     public function logout(){
-        cookie('userid',null);
-        cookie('username',null);
-        cookie('key',null);
+        session('username',null);
         return $this->fetch('login');
     }
 

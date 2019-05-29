@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>民间传说故事</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+		<meta name="apple-mobile-web-app-capable" content="yes"/>
+		<link href="__PUBLIC__/static/index/resources/css/jquery-ui-themes.css" type="text/css" rel="stylesheet"/>
+		<link href="__PUBLIC__/static/index/resources/css/axure_rp_page.css" type="text/css" rel="stylesheet"/>
+		<link href="__PUBLIC__/static/index/data/styles.css" type="text/css" rel="stylesheet"/>
+		<link href="__PUBLIC__/static/index/files/民间传说故事/styles.css" type="text/css" rel="stylesheet"/>
+		<script src="__PUBLIC__/static/index/resources/scripts/jquery-1.7.1.min.js"></script>
+		<script src="__PUBLIC__/static/index/resources/scripts/jquery-ui-1.8.10.custom.min.js"></script>
+		<script src="__PUBLIC__/static/index/resources/scripts/prototypePre.js"></script>
+		<script src="__PUBLIC__/static/index/data/document.js"></script>
+		<script src="__PUBLIC__/static/index/resources/scripts/prototypePost.js"></script>
+		<script src="__PUBLIC__/static/index/files/民间传说故事/data.js"></script>
+		<script type="text/javascript">
+			$axure.utils.getTransparentGifPath = function() { return '__PUBLIC__/static/index/resources/images/transparent.gif'; };
+			$axure.utils.getOtherPath = function() { return '__PUBLIC__/static/index/resources/Other.html'; };
+			$axure.utils.getReloadPath = function() { return '__PUBLIC__/static/index/resources/reload.html'; };
+		</script>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<meta name="keywords" content="">
+		<meta name="description" content="">
+		<link rel="stylesheet" href="__PUBLIC__/static/forum/res/layui/css/layui.css">
+		<link rel="stylesheet" href="__PUBLIC__/static/forum/res/css/global.css">
+		<script src="__PUBLIC__/static/forum/res/layui/layui.js"></script>
+
+
+	</head>
+	<body>
+	<div id="base" class="">
+
+		<!-- Unnamed (导航栏) -->
+
+		<!-- Unnamed (矩形) -->
+		<div id="u248" class="ax_default box_2">
+			<div id="u248_div" class=""></div>
+		</div>
+
+		<!-- Unnamed (矩形) -->
+		<div id="u249" class="ax_default label">
+			<div id="u249_div" class=""></div>
+			<div id="u249_text" class="text ">
+				<p><span><a href="{:url('index/index/folk_customs')}">民俗风情</a></span></p>
+			</div>
+		</div>
+
+		<!-- Unnamed (矩形) -->
+		<div id="u250" class="ax_default label">
+			<div id="u250_div" class=""></div>
+			<div id="u250_text" class="text ">
+				<p><span><a href="{:url('index/index/ancient_tree_architecture')}">古树古建筑</a></span></p>
+			</div>
+		</div>
+
+		<!-- Unnamed (矩形) -->
+		<div id="u251" class="ax_default label">
+			<div id="u251_div" class=""></div>
+			<div id="u251_text" class="text ">
+				<p><span><a href="{:url('forum/forum/index')}">民间传说故事</a></span></p>
+			</div>
+		</div>
+
+		<!-- Unnamed (矩形) -->
+		<div id="u252" class="ax_default label">
+			<div id="u252_div" class=""></div>
+			<div id="u252_text" class="text ">
+				<p><span><a href="{:url('index/index/biography')}">名人传记</a></span></p>
+			</div>
+		</div>
+
+		<!-- Unnamed (图片) -->
+		<div id="u253" class="ax_default image1">
+			<a href="{:url('index/index/index')}"><img id="u253_img" class="img " src="__PUBLIC__/static/index/images/首页/u29.png"/></a>
+		</div>
+
+		<!-- 小人头 -->
+		{if $Think.session.user_name==''}
+		<div id="u254" class="ax_default image1">
+			<img id="u254_img" class="img " src="__PUBLIC__/static/index/images/民间传说故事/u254.png"/>
+		</div>
+		{else}
+		<div id="u254" class="ax_default image1">
+			<a href="{:url('forum/forum/personal_center')}"><img id="u254_img" class="img " src="__PUBLIC__/static/index/images/民间传说故事/u254.png"/></a>
+		</div>
+		{/if}
+		{if $Think.session.user_name!=''}
+		<!-- Unnamed (矩形) -->
+		<div id="u255" class="ax_default label">
+			<div id="u255_div" class=""></div>
+			<div id="u255_text" class="text ">
+				<p><span>{$Think.session.user_name}</span></p>
+			</div>
+		</div>
+		{else}
+			<div id="u255" class="ax_default label">
+				<div id="u255_div" class=""></div>
+				<div id="u255_text" class="text ">
+					<p><span>请登录</span></p>
+				</div>
+			</div>
+		{/if}
+
+		{if $Think.session.user_name==''}
+		<!-- Unnamed (矩形) -->
+		<div id="u256" class="ax_default label">
+			<div id="u256_div" class=""></div>
+			<div id="u256_text" class="text ">
+				<a href="{:url('forum/forum/login')}"><p><span>登录</span></p></a>
+			</div>
+		</div>
+		<!-- Unnamed (矩形) -->
+		<div id="u258" class="ax_default label">
+			<div id="u258_div" class=""></div>
+			<div id="u258_text" class="text ">
+				<a href="{:url('forum/forum/register')}"><p><span>注册</span></p></a>
+			</div>
+		</div>
+	</div>
+	{else}
+	<div id="u256" class="ax_default label">
+		<div id="u256_div" class=""></div>
+		<div id="u256_text" class="text ">
+			<a href="{:url('forum/forum/logout')}"><p><span>退出</span></p></a>
+		</div>
+	</div>
+	<div id="u258" class="ax_default label">
+		<div id="u258_div" class=""></div>
+		<div id="u258_text" class="text ">
+		</div>
+	</div>
+	</div>
+	{/if}
+	<br /><br /><br /><br />
+		<!--<iframe  src="__PUBLIC__/static/forum/head.html" scrolling="no" width="100%" height="65px" ></iframe>-->
+		<div class="main layui-clear">
+			<div class="wrap">
+				<div class="content" style="margin-right:0">
+					<div class="fly-tab">
+						<!--
+        <span>
+          <a href="" class="tab-this">全部</a>
+          <a href="">未结帖</a>
+          <a href="">已采纳</a>
+          <a href="">置顶帖</a>
+          <a href="../user/index.html">我的帖</a>
+        </span>
+       -->
+						<form action="{:url('forum/forum/index')}" class="fly-search" method="post">
+
+							<input class="layui-input" autocomplete="off" id="search" name="search" placeholder="搜索内容" type="text" name="q">
+							<input type="submit" class="btn btn-primary" style="background-color: #C6C6C6;width: 90px;height: 35px; cursor: pointer;"/>
+						</form>
+						{if $Think.session.user_name!=''}
+						<a href="{:url('forum/forum/que_add')}" class="layui-btn jie-add">发布问题</a>
+						{/if}
+					</div>
+					{load href="__PUBLIC__/static/admin/css/bootstrap_page.css" /}
+					{load href="__PUBLIC__/static/admin/js/bootstrap.js" /}
+					<ul class="fly-list">
+						{volist name='list' id='v'}
+						<li class="fly-list-li">
+							<a href="" class="fly-list-avatar">
+								<img src="<?php echo '__PUBLIC__' ?>{$v.user_pic}" alt="">
+							</a>
+							<h2 class="fly-tip">
+            <a><form method="post" action="{:url('forum/forum/detail')}">
+				<input type="submit" name="title" value="{$v.title}" style="border-width: 0px;background-color: #ffffff;cursor: pointer; ">
+				<input type="hidden" name="id" value="{$v.id}">
+			</form>
+				</a>
+            <span class="fly-tip-stick">置顶</span>
+          </h2>
+							<p>
+								<span><a href="">{$v.user_name}</a></span>
+								<span>{$v.date}</span>
+								<span class="fly-list-hint">
+              <i class="iconfont" title="回答">&#xe60c;</i> {$v.num}
+            </span>
+							</p>
+						</li>
+
+						{/volist}
+					</ul>
+					<div align="right">{$page}</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+
