@@ -370,4 +370,63 @@ public $discussModel;
         $this->redirect('forum/forum/detail');
     }
 
+    //个人中心——修改密码
+    public function change_password(){
+        if (request()->isPost()){
+            //接收前端表单提交的数据
+            $this->userModel->old_password = input('post.old_password');
+            $this->userModel->new_password = input('post.new_password');
+            $repwd = input('post.re_new_password');
+            $arr = array();
+            $arr = $this->userModel->where('id', session('user_id'))->find();
+            if ($arr['user_pwd'] != md5($this->userModel->old_password.$arr['salt'])){
+                $this->error('原密码不正确','forum/forum/change_password','','2');
+            }
+            //进行规则验证
+            $result = $this->validate(
+                [
+                    'user_pwd' => $this->userModel->new_password,
+                    'repassword' => $repwd,
+                ],
+                [
+                    'user_pwd' => 'require|length:6,16',
+                    'repassword' => 'require|confirm:user_pwd',
+                ]);
+            if (true !== $result){
+                $this->error($result);
+            }
+            $data = [
+                'user_pwd' => $this->userModel->new_password
+            ];
+            $this->userModel->where('id',session('user_id'))->update($data);
+            $this->success('密码修改成功','','','2');
+        }
+        $this->assign('change', $this->userModel->where('id', session('user_id'))->find());
+        return $this->fetch();
+    }
+
+    //我的帖子
+    public function log_management(){
+        $list= $this->forumModel->where('user_name',session('user_name'))->where('delete',0)->paginate(2);
+        $page = $list->render();
+        //分页显示输出
+        $this->assign('list',$list);
+        $this->assign('page',$page);// 把分页数据赋值给模板变量list
+//        var_dump($list);exit();
+        $this->assign('log_m',$this->userModel->where('id',session('user_id'))->find());
+        return $this->fetch();
+    }
+
+    //我的帖子——删除
+    public function log_management_del(){
+        $id = input('id');
+        $data = [
+            'delete' => 1
+        ];
+        if ($this->forumModel->where('id',$id)->update($data)){
+            $this->success("删除成功",'forum/forum/log_management','',2);
+        }else{
+            $this->error("删除失败",'','',2);
+        }
+    }
 }

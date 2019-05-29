@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>个人主页</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <link href="__PUBLIC__/static/index/resources/css/jquery-ui-themes.css" type="text/css" rel="stylesheet"/>
+    <link href="__PUBLIC__/static/index/resources/css/axure_rp_page.css" type="text/css" rel="stylesheet"/>
+    <link href="__PUBLIC__/static/index/data/styles.css" type="text/css" rel="stylesheet"/>
+    <link href="__PUBLIC__/static/index/files/个人主页/styles.css" type="text/css" rel="stylesheet"/>
+    <script src="__PUBLIC__/static/index/resources/scripts/jquery-1.7.1.min.js"></script>
+    <script src="__PUBLIC__/static/index/resources/scripts/jquery-ui-1.8.10.custom.min.js"></script>
+    <script src="__PUBLIC__/static/index/resources/scripts/prototypePre.js"></script>
+    <script src="__PUBLIC__/static/index/data/document.js"></script>
+    <script src="__PUBLIC__/static/index/resources/scripts/prototypePost.js"></script>
+    <script src="__PUBLIC__/static/index/files/个人主页/data.js"></script>
+    <script type="text/javascript">
+        $axure.utils.getTransparentGifPath = function() { return 'resources/images/transparent.gif'; };
+        $axure.utils.getOtherPath = function() { return 'resources/Other.html'; };
+        $axure.utils.getReloadPath = function() { return 'resources/reload.html'; };
+
+    </script>
+
+    <script>
+        function uploadImg(file,imgNum){
+            var widthImg = 200; //显示图片的width
+            var heightImg = 200; //显示图片的height
+            var div = document.getElementById(imgNum);
+            if (file.files && file.files[0]){
+                div.innerHTML ='<img id="upImg">'; //生成图片
+                var img = document.getElementById('upImg'); //获得用户上传的图片节点
+                img.onload = function(){
+                    img.width = widthImg;
+                    img.height = heightImg;
+                }
+                var reader = new FileReader(); //判断图片是否加载完毕
+                reader.onload = function(evt){
+                    if(reader.readyState === 2){ //加载完毕后赋值
+                        img.src = evt.target.result;
+                    }
+                }
+                reader.readAsDataURL(file.files[0]);
+            }
+        }
+    </script>
+
+
+
+
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/static/admin/css/H-ui.min.css" />
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/static/admin/css/H-ui.admin.css" />
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/static/admin/lib/Hui-iconfont/1.0.8/iconfont.css" />
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/static/admin/skin/default/skin.css" id="skin" />
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/static/admin/css/style.css" />
+    <!--[if IE 6]>
+    <script type="text/javascript" src="__PUBLIC__/static/admin/lib/DD_belatedPNG_0.0.8a-min.js" ></script>
+    <script>DD_belatedPNG.fix('*');</script><![endif]-->
+    <!--/meta 作为公共模版分离出去-->
+
+</head>
+<body>
+<div id="base" class="">
+
+    <!-- Unnamed (组 合) -->
+
+        <div id="u302" class="ax_default" data-left="0" data-top="0" data-width="1440" data-height="1038">
+
+            <!-- Unnamed (矩形) -->
+            <div id="u303" class="ax_default shape">
+                <div id="u303_div" class=""></div>
+                <div id="u303_text" class="text ">
+                    <p><span>`</span></p>
+                </div>
+            </div>
+
+            <!-- Unnamed (矩形) -->
+            <div id="u304" class="ax_default box_1">
+                <div id="u304_div" class=""></div>
+            </div>
+        </div>
+
+            <!-- Unnamed (组 合) -->
+            <div id="u306" class="ax_default" data-left="0" data-top="0" data-width="256" data-height="516">
+                <!-- Unnamed (图片) -->
+                <div id="u308" class="ax_default image">
+                    <img id="u308_img" class="img " src="__PUBLIC__/static/index/images/个人主页/u308.png"/>
+                </div>
+                <!-- Unnamed (组 合) -->
+                <div id="u309" class="ax_default" data-left="0" data-top="65" data-width="256" data-height="451">
+                    <!-- Unnamed (矩形) -->
+                    <div id="u314" class="ax_default box_2">
+                        <div id="u314_div" class=""></div>
+                        <div id="u314_text" class="text ">
+                            <a href="{:url('forum/forum/personal_center')}"><p><span>基本信息</span></p></a>
+                        </div>
+                    </div>
+                    <!-- Unnamed (矩形) -->
+                    <div id="u319" class="ax_default box_2">
+                        <div id="u319_div" class=""></div>
+                        <div id="u319_text" class="text ">
+                            <a href="{:url('forum/forum/change_password')}"><p><span>修改密码</span></p></a>
+                        </div>
+                    </div>
+                    <!-- Unnamed (矩形) -->
+                    <div id="u320" class="ax_default box_2">
+                        <div id="u320_div" class=""></div>
+                        <div id="u320_text" class="text ">
+                            <a href="{:url('forum/forum/log_management')}"><p><span>我的帖子</span></p></a>
+                        </div>
+                    </div>
+
+
+
+                    <!-- Unnamed (组 合) -->
+                    <div id="u337" class="ax_default" data-left="256" data-top="0" data-width="1184" data-height="64">
+
+                        <!-- Unnamed (矩形) -->
+                        <div id="u338" class="ax_default box_2">
+                            <div id="u338_div" class=""></div>
+                        </div>
+
+                        <!-- Unnamed (图片) -->
+                        <div id="u339" class="ax_default image">
+                            <img id="u339_img" class="img " src="__PUBLIC__/static/index/images/个人主页/u339.png"/>
+                        </div>
+
+                        <!-- Unnamed (组 合) -->
+                        <div id="u340" class="ax_default" data-left="1317" data-top="21" data-width="94" data-height="24">
+
+                            <!-- Unnamed (图片) -->
+                            <div id="u341" class="ax_default image">
+                                <img id="u341_img" class="img " src="<?php echo '__PUBLIC__' ?>{$log_m.thumb}"/>
+                            </div>
+
+                            <!-- Unnamed (矩形) -->
+                            <div id="u342" class="ax_default label">
+                                <div id="u342_div" class=""></div>
+                                <div id="u342_text" class="text ">
+                                    <p><span>{$log_m.user_name}</span></p>
+                                </div>
+                            </div>
+                        </div>
+                <!-- Unnamed (矩形) -->
+                <div id="u363" class="ax_default heading_1">
+                    <div id="u363_div" class=""></div>
+                    <div id="u363_text" class="text ">
+                        <p><span>我的帖子</span></p>
+                    </div>
+                </div>
+<form method="post" action="{:url('forum/forum/log_management')}">
+
+        <!-- Unnamed (矩形) -->
+        <div id="u365" class="ax_default heading_1">
+            <div id="u365_div" class=""></div>
+            <div id="u365_text" class="text ">
+
+            </div>
+        </div>
+        {load href="__PUBLIC__/static/admin/css/bootstrap_page.css" /}
+        {load href="__PUBLIC__/static/admin/js/bootstrap.js" /}
+
+        <!-- 遍历数据库 -->
+        <div id="u366" class="ax_default" data-left="316" data-top="196" data-width="448" data-height="32">
+            <!-- Unnamed (矩形) -->
+            <div id="u367" class="ax_default shape">
+                <div class="form-group">
+                    <div class="mt-20" align="right">
+                        <table class="table table-border table-bordered table-bg table-hover table-sort">
+                            <tr class="text-c">
+                                <!--<th width="25"><input type="checkbox" name="" value=""></th>-->
+                                <!--<th width="80">ID</th>-->
+                                <th width="20%" height="auto" bgcolor="#f0ffff">标题</th>
+                                <th width="20%" height="auto" bgcolor="#f0ffff">内容</th>
+                                <th width="20%" height="auto" bgcolor="#f0ffff">日期</th>
+                                <th width="20%" height="auto" bgcolor="#f0ffff">评论数</th>
+                                <th width="20%" height="auto" bgcolor="#f0ffff">管理</th>
+                            </tr>
+                            <tbody>
+                            {volist name='list' id='vo'}
+                            <tr class="text-c">
+                                <!--<td><input type="checkbox" value="" name=""></td>-->
+                                <td>{$vo.title}</td>
+                                <td class="text-l" height="auto">{$vo.article}</td>
+                                <td class="text-l" height="auto">{$vo.date}</td>
+                                <td>{$vo.num}</td>
+                                <td class="f-14 td-manage"><!--<a style="text-decoration:none" onClick="article_stop(this,'10001')" href="javascript:;" title="下架"><i class="Hui-iconfont">&#xe6de;</i></a>-->
+                                    <a style="text-decoration:none" class="ml-5" href="{:url('forum/forum/log_management_del',array('id'=>$vo.id))}" title="删除"><i class="Hui-iconfont">&#xe6e2;</i></a></td>
+                            </tr>
+                            {/volist}
+                            </tbody>
+                        </table>
+                        {$page}
+                    </div>
+                </div>
+            </div>
+        </div>
+</form>
+            </div>
+                </div></div></div>
+</body>
+</html>
