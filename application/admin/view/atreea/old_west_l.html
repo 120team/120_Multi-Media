@@ -37,6 +37,10 @@
             <nav id="Hui-userbar" class="nav navbar-nav navbar-userbar hidden-xs">
                 <ul class="cl">
                     <!--<li>超级管理员</li>-->
+                    {if $Think.session.username==null}
+                    <script>window.location.href="{:url('admin/index/logout')}";
+                    </script>
+                    {/if}
                     <li class="dropDown dropDown_hover">
                         {$Think.session.username}
                     </li>
